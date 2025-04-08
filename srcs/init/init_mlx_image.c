@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_mlx_image.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alibaba <alibaba@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pbailly <pbailly@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 13:02:23 by alibabab          #+#    #+#             */
-/*   Updated: 2025/03/06 12:15:53 by alibaba          ###   ########.fr       */
+/*   Updated: 2025/04/08 17:21:32 by pbailly          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ static t_image	*load_texture(t_data *data, char *path)
 	texture->img = mlx_xpm_file_to_image(data->mlx, path, &texture->width,
 			&texture->height);
 	if (!texture->img)
+	{
+		free(texture);
 		err_msg("Failed to load texture\n", data);
+	}
 	texture->img_data = mlx_get_data_addr(texture->img, &texture->bpp,
 			&texture->size_line, &texture->endian);
 	if (!texture->img_data)
