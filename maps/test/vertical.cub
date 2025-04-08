@@ -1,0 +1,12 @@
+NO ./textures/made/made_wall_n.xpm
+SO ./textures/made/made_wall_s.xpm
+WE ./textures/made/made_wall_w.xpm
+EA ./textures/made/made_wall_e.xpm
+DOOR ./textures/made/made_door.xpm
+
+F 20,20,20
+C 200,200,200
+
+111111111111111111111
+1N00000D0000000000001
+111111111111111111111
